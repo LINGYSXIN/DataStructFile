@@ -1,4 +1,4 @@
-// Created on iPad.
+﻿// Created on iPad.
 //二叉树
 
 #include <iostream>
@@ -81,7 +81,7 @@ void InitBiTree(BiTree &T){
 }
 
 void Visit(BiTree T){
-    printf("%c \n",T->data);
+    printf("%c ",T->data);
 }
 
 
@@ -208,7 +208,7 @@ void LevelOrderTraverse(BiTree T){
 
 int main() {
     BiTree T;               //声明一个指向二叉树根节点的指针               
-	cout << "kaishila !!!" << endl;
+	cout << "开始啦 !!!" << endl;
     
     CreateBiTree(T);
 	cout << "二叉树创建完成！" << endl;

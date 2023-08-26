@@ -102,6 +102,39 @@ void CreateBiTree(BiTree &T){
 
 }
 
+//建树方法2,完全二叉树
+BiTree CreateLink(BiTree *T)		//	次数 T为指向根节点的指针的地址
+{
+    int data;
+
+    scanf("%d",&data);
+
+
+    if(data == -1){
+
+        *T=NULL;				//	结束递归时，让指针当前节点的指针地址的 指针 指向NULL
+
+    }else{
+
+        *T = (BiTree)malloc(sizeof(BiTNode));		//	对指向节点指针地址的指针 分配内存
+
+        if(!(*T) ){			//	*T = NULL  表示分配内存失败，也就是结束递归创建了
+            printf("内存分配失败\n");
+            exit(-1);
+        }
+
+
+        (*T)->data = data;		//	给节点指针地址内的数据域，存入数据
+
+        printf("请输入%d的左子树: ",data);
+        CreateLink(&(*T)->lchild);		//	开始遍历左子树
+        printf("请输入%d的右子树: ",data);
+        CreateLink(&(*T)->rchild);		//	开始遍历右子树，遍历的思想文章开头处解释
+
+    }
+
+}
+
 
 /*
     //清空树
